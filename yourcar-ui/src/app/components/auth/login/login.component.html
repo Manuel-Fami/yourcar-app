@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">CONNEXION</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- Champ Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+        required
+      />
+    </div>
+
+    <!-- Radio Group -->
+    <div class="mb-3">
+      <label class="form-label">Rôle</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="roleAdmin"
+            value="admin"
+            formControlName="role"
+            required
+          />
+          <label class="form-check-label" for="roleAdmin">ADMIN</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="roleUser"
+            value="user"
+            formControlName="role"
+            required
+          />
+          <label class="form-check-label" for="roleUser">UTILISATEUR</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bouton Valider -->
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary">VALIDER</button>
+    </div>
+  </form>
+</div>
